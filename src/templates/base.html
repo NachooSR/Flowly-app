@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Flowly{% endblock %}</title>
+
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/global.css' %}">
+   {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="/">Flowly</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-content">
+    {% block content %}
+    {% endblock %}
+</main>
+
+
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

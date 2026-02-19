@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="color: white;">Lista users</h1>
+    {% for profile in profiles  %}
+        <div>
+            <h1 style="color: white" >{{ profile.username }}</h1>
+            <h3 style="color: white">Mail: {{ profile.user.email }} </h3>
+        </div>
+    {% endfor %}
+{% endblock %}
