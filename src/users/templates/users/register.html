@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'users/register.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="register-container">
+
+    <h1>Create account</h1>
+
+    <form method="POST" class="register-form">
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+        <div class="form-errors">
+            {{ form.non_field_errors }}
+        </div>
+       {% endif %}
+
+
+        <div class="form-group">
+    {{ form.email.label_tag }}
+    {{ form.email }}
+    {{ form.email.errors }}
+</div>
+
+<div class="form-group">
+    {{ form.username.label_tag }}
+    {{ form.username }}
+    {{ form.username.errors }}
+</div>
+
+<div class="form-group">
+    {{ form.type_account.label_tag }}
+    {{ form.type_account }}
+    {{ form.type_account.errors }}
+</div>
+
+<div class="form-group">
+    {{ form.password1.label_tag }}
+    {{ form.password1 }}
+    {{ form.password1.errors }}
+</div>
+
+<div class="form-group">
+    {{ form.password2.label_tag }}
+    {{ form.password2 }}
+    {{ form.password2.errors }}
+</div>
+
+        <button type="submit" class="btn-register">Sign up</button>
+
+    </form>
+</div>
+
+{% endblock content %}

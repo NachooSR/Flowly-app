@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/appmode.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="app-modes">
+    <h1 class="title">App Modes</h1>
+    <p class="subtitle">
+        Flowly offers different modes to help you manage your finances depending on your needs.
+    </p>
+
+    <div class="cards-container">
+
+        <div class="mode-card">
+            <h2>Tracking Mode</h2>
+            <p>
+                Designed for speed and simplicity. Quickly register your daily
+                expenses and income without worrying about balances.
+            </p>
+
+            <p>
+                Perfect for users who want a fast way to track where their money
+                goes. Every transaction is recorded so you can later analyze your
+                spending habits and financial activity.
+            </p>
+        </div>
+
+        <div class="mode-card balance">
+            <h2>Balance Mode <span class="dev">(In Development)</span></h2>
+
+            <p>
+                A more structured way to manage your finances. You start by
+                defining your available balance and savings.
+            </p>
+
+            <p>
+                Every expense automatically subtracts from your balance, and
+                every income increases it. This allows you to maintain a clear
+                overview of your real financial situation.
+            </p>
+
+            <p>
+                Ideal for users who want stricter control of their money and
+                long-term savings.
+            </p>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}

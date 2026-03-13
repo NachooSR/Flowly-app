@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/landing.css' %}">
+{% endblock %}
+
+{% block content %}
+    
+<section class="hero">
+
+    <h1 class="title">Flowly</h1>
+
+    <h2 class="subtitle">
+        Where your money flows with clarity
+    </h2>
+
+    <a href="signin">
+    <button class="cta">
+        Get started
+       
+    </button>
+    </a> 
+</section>
+
+{% endblock content %}

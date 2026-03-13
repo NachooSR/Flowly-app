@@ -1,10 +1,28 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+
+class AccountType(models.IntegerChoices):
+    TRACKING = 1,"Tracking"
+    BALANCE = 2,"Balance"
 
 # Create your models here.
-class Profile (models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    username = models.CharField(max_length=100)
+class CustomUser (AbstractUser):
+    
+    email = models.EmailField(unique=True)
 
-    def __str__(self):
-        return f"{self.username} ({self.user.email})"
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username"]
+
+    type_account = models.IntegerField(
+        choices = AccountType.choices,
+        default = AccountType.TRACKING 
+    )
+    
+    balance = models.FloatField(default= 0)
+    
+    profile_image = models.ImageField(
+        upload_to= "profiles/",
+        null= True,
+        blank= True
+    )
+    

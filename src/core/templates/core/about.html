@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/about.css' %}">
+{% endblock %}
+
+
+
+{% block content  %}
+<section class="about-section">
+
+ 
+
+    <div class="flip-card">
+
+        <div class="flip-card-inner" id="aboutCard">
+
+            
+            <div class="flip-card-front">
+
+                <h2>About the Project</h2>
+
+                <p>
+                    Flowly is a personal finance tracking application designed
+                    to help users record their expenses and income in a simple
+                    and efficient way.
+                </p>
+
+                <p>
+                    The project focuses on clarity and speed, allowing users to
+                    quickly log financial activity while still having the option
+                    to manage balances and savings in a more structured mode.
+                </p>
+
+                <p>
+                    The goal of Flowly is to grow from a simple tracking tool
+                    into a more complete financial management platform.
+                </p>
+
+                <button onclick="flipCard()">→ About the Developer</button>
+
+            </div>
+
+
+            
+            <div class="flip-card-back">
+
+                <h2>About the Developer</h2>
+
+                <p>
+                    My name is Ignacio Reyna and I am a Programming Technician
+                    with a strong interest in backend development and system design.
+                </p>
+
+                <p>
+                    I mainly work with Python and Django, building backend
+                    applications, APIs and data-driven systems.
+                </p>
+
+                <p>
+                    Flowly is part of my learning journey as a developer,
+                    where I focus on building real projects and improving my
+                    understanding of software architecture.
+                </p>
+
+                <button onclick="flipCard()">← About the Project</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock  %}
+
+{% block extra_js %}
+<script src="{% static 'core/js/about.js' %}"></script>
+{% endblock %}
+
