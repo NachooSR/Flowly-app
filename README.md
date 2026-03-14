@@ -34,6 +34,8 @@ Cada usuario solo puede ver y modificar **sus propias transacciones**.
 ```bash
 git clone <url-del-repositorio>
 cd flowly
+```
+
 
 ### 2. Crear entorno virtual
 
@@ -71,6 +73,7 @@ Abrir en el navegador:
 
 ```bash
 http://127.0.0.
+```
 
 ## Orden recomendado para probar la aplicación
 
