@@ -18,10 +18,7 @@ class CustomUserCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        
         self.fields["type_account"].choices = AccountType.choices
-
-        
         balance_value = AccountType.BALANCE
         self.fields["type_account"].widget.choices = [
             (value, label if value != balance_value else f"{label} (Coming soon)")
@@ -33,5 +30,4 @@ class CustomUserCreationForm(UserCreationForm):
 
         if value == AccountType.BALANCE:
             raise forms.ValidationError("Balance mode is still in development.")
-
         return value

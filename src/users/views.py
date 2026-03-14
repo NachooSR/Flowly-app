@@ -7,7 +7,6 @@ from django.contrib.auth.forms import AuthenticationForm
  
 # Create your views here.
 def signin(request):
-
     if request.method == "POST":
 
         email = request.POST.get("email")
@@ -28,8 +27,9 @@ def signin(request):
         "form": AuthenticationForm()
     })
 
-def register(request):
 
+def register(request):
+    
     form = CustomUserCreationForm(request.POST or None)
 
     if request.method == "POST" and form.is_valid():

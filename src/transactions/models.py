@@ -38,20 +38,12 @@ class Transaction(models.Model):
     category = models.ForeignKey("Category", on_delete=models.SET_NULL, null=True, blank=True)
     recipient = models.CharField(max_length=200, blank=True, null=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    payment_method = models.CharField(max_length=20, choices=PaymentMethod.choices)
-    nature = models.CharField(max_length=10, choices=TransactionNature.choices)
+    payment_method = models.CharField(max_length=20, choices=PaymentMethod.choices, blank=True,
+    null=True)
+    nature = models.CharField(max_length=10, choices=TransactionNature.choices, blank=True,
+    null=True)
     transaction_date = models.DateField(default=timezone.now)
     created_at = models.DateTimeField(auto_now_add=True)
 
-
-'''
-Id -> generado automaticamente (Lo hace solo la tabla)
-Nombre-> (Opcional) 
-Categoria-> (Opcional)
-Destinario-> (Opcional -> lista conta/nombre)
-Monto -> not null
-forma pago -> efectivo, wallet..
-Fijo o variable
-fecha-> automatica/manual
-'''
-
+    def __str__(self):
+        return f'{self.name} (${self.amount})'

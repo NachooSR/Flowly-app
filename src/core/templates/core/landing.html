@@ -15,12 +15,20 @@
         Where your money flows with clarity
     </h2>
 
+    {% if user.is_authenticated %}
+        <a href="home">
+        <button class="cta">
+            Get started
+        </button>
+        </a>
+    {% else %}
     <a href="signin">
     <button class="cta">
         Get started
-       
     </button>
-    </a> 
+    </a>
+    {% endif %}
+     
 </section>
 
 {% endblock content %}
